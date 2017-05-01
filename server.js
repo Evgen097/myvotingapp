@@ -25,7 +25,7 @@ app.use(cookieParser());
 passport.use(new Strategy({
     consumerKey: "yp1J03UfG5gcTxlrb0T3Knc8W",
     consumerSecret: "5vTk0pkx8nb62KuAQhgwF7ja6jDf4FGO8MOZEj22bh3hplumB5",
-    callbackURL: 'https://mytestangular-evgenkaban.c9users.io/login/twitter/return'
+    callbackURL: 'https://myvotingap.herokuapp.com/login/twitter/return'
   },
   function(token, tokenSecret, profile, cb) {
     return cb(null, profile);
