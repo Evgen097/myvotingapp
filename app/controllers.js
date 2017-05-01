@@ -87,11 +87,17 @@ angular.module('pollApp')
         $scope.own_option = '';
         $scope.item = '';
         $scope.show_custom = false;
+        $scope.can_show_custom = false;
+        
+        if($localStorage.user){
+            $scope.can_show_custom = true;
+            console.log('$scope.can_show_custom = ' +$scope.can_show_custom);
+        }
         
         $scope.show_own_option = function(item, own_option){
             $scope.item = item;
             $scope.own_option = own_option;
-            if ($scope.item == "I'd like a custom option"){
+            if ($scope.item == "I'd like a custom option" && $scope.can_show_custom){
                 $scope.show_custom = true;
             }else{
                 $scope.show_custom = false;
@@ -169,7 +175,7 @@ angular.module('pollApp')
                             $scope.labels.push(key);
                             $scope.data.push($scope.poll.options[key]) ;
                         }
-                        $scope.vote_option.options.push("I'd like a custom option");
+                        if ($scope.can_show_custom){$scope.vote_option.options.push("I'd like a custom option")};
                         $scope.options = {legend: {display: true}};
                         $scope.showPoll = true;
                         if ($scope.poll.owner == $scope.user_ip){

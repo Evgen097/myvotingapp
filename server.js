@@ -23,8 +23,8 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser());
 
 passport.use(new Strategy({
-    consumerKey: "YMd1r1tUCUobQkT8SexL3bFpU",
-    consumerSecret: "diRZYv71cNaK8Ne3JZIEmJBuIj0hW0EE4NgYS43e6xyMTZ7NwV",
+    consumerKey: "yp1J03UfG5gcTxlrb0T3Knc8W",
+    consumerSecret: "5vTk0pkx8nb62KuAQhgwF7ja6jDf4FGO8MOZEj22bh3hplumB5",
     callbackURL: 'https://mytestangular-evgenkaban.c9users.io/login/twitter/return'
   },
   function(token, tokenSecret, profile, cb) {
